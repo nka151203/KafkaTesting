@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumerService {
 
     @KafkaListener(topics = "topic1", groupId = "consumer1-group")
-    public void listenToTopic1(Message message) {
-        log.info("Consumer 1 received message from topic1: {}", message);
+    public void listenToTopic1(Object message) {
+        log.info("Consumer 1 received message from topic1: {}", message.toString());
         // Process message logic goes here
     }
 }
